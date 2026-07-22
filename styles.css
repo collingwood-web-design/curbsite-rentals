@@ -668,25 +668,25 @@ p:last-child {
   }
 
   .hero {
-    min-height: min(58vh, 520px);
+    min-height: 440px;
   }
 
   .hero-media img {
-    object-position: 78% center;
+    object-position: 88% 62%;
   }
 
   .hero-veil {
     background: linear-gradient(
-      105deg,
-      rgba(255, 255, 255, 0.88) 0%,
-      rgba(255, 255, 255, 0.72) 34%,
-      rgba(255, 255, 255, 0.28) 58%,
-      transparent 78%
+      180deg,
+      transparent 0%,
+      transparent 45%,
+      rgba(255, 255, 255, 0.55) 78%,
+      rgba(255, 255, 255, 0.88) 100%
     );
   }
 
   .hero-content {
-    padding: clamp(2.5rem, 6vw, 3.5rem) 0;
+    padding: 2rem 0 2.25rem;
   }
 
   .hero-content h1 {
@@ -813,7 +813,8 @@ p:last-child {
   }
 
   .hero {
-    min-height: min(70vh, 560px);
+    min-height: 420px;
+    max-height: none;
     align-items: end;
   }
 
@@ -824,40 +825,36 @@ p:last-child {
   }
 
   .hero-media img {
-    object-position: 82% center;
+    object-fit: cover;
+    object-position: 92% 58%;
   }
 
   .hero-veil {
     display: block;
     background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.15) 0%,
-      rgba(255, 255, 255, 0.55) 38%,
-      rgba(255, 255, 255, 0.9) 68%,
-      rgba(255, 255, 255, 0.96) 100%
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.82) 0%,
-      rgba(255, 255, 255, 0.45) 48%,
-      transparent 78%
+      transparent 0%,
+      transparent 42%,
+      rgba(255, 255, 255, 0.65) 72%,
+      rgba(255, 255, 255, 0.92) 100%
     );
   }
 
   .hero-content {
     max-width: none;
-    padding: 2rem 0 2.25rem;
+    padding: 1.25rem 0 1.5rem;
     background: transparent;
   }
 
   .hero-content h1 {
-    font-size: clamp(1.35rem, 5.8vw, 1.75rem);
+    font-size: clamp(1.4rem, 6vw, 1.75rem);
+    margin-bottom: 0.75rem;
   }
 
   .hero-content .lede {
     max-width: 20rem;
-    font-size: 0.95rem;
-    margin-bottom: 1.25rem;
+    font-size: 0.92rem;
+    margin-bottom: 1rem;
   }
 
   .media-block img {
