@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=17" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -82,23 +82,24 @@
       </div>
     </section>
 
-    <section class="section section-alt" id="meet-the-truck">
-      <div class="shell split">
-        <div class="meet-copy">
-          <h2 class="headed">Meet the truck</h2>
-          <p>Our 16 ft cube truck is built for productive routes—organized inside, dock-ready at the rear, and safer at the curb.</p>
-          <ul class="check-list">
-            <li>16 ft cargo box</li>
-            <li>Built-in shelving</li>
-            <li>Bulkhead access</li>
-            <li>Roll-up rear door</li>
-          </ul>
-          <a class="btn btn-primary" href="booking.html">Book now</a>
-        </div>
-        <figure class="media-block">
-          <!-- Replace with client side-profile truck photo when provided -->
-          <img src="assets/images/fleet.jpg" alt="White 16 foot Curbside Rentals cube truck" width="1200" height="800" loading="lazy" />
-        </figure>
+    <section class="meet-hero" id="meet-the-truck" aria-label="Meet the truck">
+      <div class="meet-hero-media" aria-hidden="true">
+        <picture>
+          <source media="(max-width: 900px)" srcset="assets/images/Curbside-rentals-meet-the-truck.-cell-tablet.jpg" />
+          <img src="assets/images/Curbside-rentals-meet-the-truck.jpg" alt="" width="1920" height="1080" loading="lazy" />
+        </picture>
+      </div>
+      <div class="meet-hero-veil" aria-hidden="true"></div>
+      <div class="shell meet-hero-content">
+        <h2>Meet the truck</h2>
+        <p class="lede">Our 16 ft cube truck is purpose-built for delivery and moving professionals.</p>
+        <ul class="check-list">
+          <li>16 ft cargo box</li>
+          <li>Built-in shelving</li>
+          <li>Bulkhead access</li>
+          <li>Roll-up rear door</li>
+        </ul>
+        <a class="btn btn-dark" href="booking.html">Book now</a>
       </div>
     </section>
 

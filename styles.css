@@ -224,16 +224,15 @@ p:last-child {
   text-decoration: none;
 }
 
-.btn-primary {
-  background: var(--blue);
-  border-color: var(--blue);
+.btn-dark {
+  background: var(--black);
+  border-color: var(--black);
   color: var(--white);
 }
 
-.btn-primary:hover {
-  background: var(--blue-deep);
-  border-color: var(--blue-deep);
-  color: var(--white);
+.btn-dark:hover {
+  background: var(--white);
+  color: var(--black);
 }
 
 .btn-secondary {
@@ -406,7 +405,87 @@ p:last-child {
   width: 100%;
   height: min(420px, 55vw);
   object-fit: cover;
-  filter: grayscale(1);
+  object-position: center;
+}
+
+/* Meet the truck — hero-style full-bleed background */
+.meet-hero {
+  position: relative;
+  min-height: min(64vh, 560px);
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  background: #d8d8d8;
+}
+
+.meet-hero-media {
+  position: absolute;
+  inset: 0;
+}
+
+.meet-hero-media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.meet-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.meet-hero-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.52) 0%,
+    rgba(255, 255, 255, 0.22) 30%,
+    rgba(255, 255, 255, 0) 55%
+  );
+}
+
+.meet-hero-content {
+  position: relative;
+  z-index: 1;
+  padding: clamp(2.5rem, 6vw, 4rem) 0;
+  justify-self: center;
+  width: var(--shell);
+  max-width: none;
+  margin-inline: auto;
+}
+
+.meet-hero-content h2 {
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.5vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  max-width: none;
+  margin: 0 0 1.15rem;
+  color: var(--black);
+}
+
+.meet-hero-content .lede {
+  max-width: 22rem;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  font-weight: 400;
+  margin: 0 0 1.35rem;
+  color: #3a3a3a;
+}
+
+.meet-hero-content .check-list {
+  margin-bottom: 1.75rem;
+}
+
+.meet-hero-content .check-list li::before {
+  border-left-color: var(--black);
+  border-bottom-color: var(--black);
 }
 
 /* Feature grid */
@@ -722,7 +801,7 @@ p:last-child {
     grid-template-columns: 1fr;
   }
 
-  /* Option 1: stacked hero on tablet/phone — photo clear, copy below */
+  /* Stacked hero: image + headline overlay, copy below */
   .hero {
     display: flex;
     flex-direction: column;
@@ -735,8 +814,9 @@ p:last-child {
     position: relative;
     inset: auto;
     width: 100%;
-    height: clamp(260px, 42vw, 380px);
+    height: clamp(280px, 48vw, 420px);
     flex-shrink: 0;
+    z-index: 0;
   }
 
   .hero-media img {
@@ -745,20 +825,40 @@ p:last-child {
   }
 
   .hero-veil {
-    display: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: clamp(280px, 48vw, 420px);
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0.28) 28%,
+      transparent 55%
+    );
   }
 
   .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     width: var(--shell);
     margin-inline: auto;
-    padding: 1.75rem 0 2.5rem;
+    padding: 1.5rem 0 2.5rem;
     background: var(--white);
   }
 
   .hero-content h1 {
-    font-size: clamp(1.65rem, 3.4vw, 2.4rem);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(-1 * clamp(280px, 48vw, 420px) + var(--header-h) + 0.85rem);
+    bottom: auto;
+    margin: 0;
+    font-size: clamp(1.55rem, 3.4vw, 2.35rem);
+    color: var(--black);
   }
 
   .hero-content .lede {
@@ -798,6 +898,71 @@ p:last-child {
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  /* Stacked meet-hero: image + title overlay, copy below */
+  .meet-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+    background: var(--white);
+  }
+
+  .meet-hero-media {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: clamp(280px, 48vw, 420px);
+    flex-shrink: 0;
+    z-index: 0;
+  }
+
+  .meet-hero-media img {
+    object-fit: cover;
+    object-position: center bottom;
+  }
+
+  .meet-hero-veil {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: clamp(280px, 48vw, 420px);
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0.28) 28%,
+      transparent 55%
+    );
+  }
+
+  .meet-hero-content {
+    position: relative;
+    z-index: 2;
+    width: var(--shell);
+    margin-inline: auto;
+    padding: 1.5rem 0 2.5rem;
+    background: var(--white);
+  }
+
+  .meet-hero-content h2 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(-1 * clamp(280px, 48vw, 420px) + 1.15rem);
+    bottom: auto;
+    margin: 0;
+    font-size: clamp(1.55rem, 3.4vw, 2.35rem);
+    color: var(--black);
+  }
+
+  .meet-hero-content .lede {
+    max-width: 34rem;
+    font-size: 1rem;
   }
 }
 
@@ -883,21 +1048,19 @@ p:last-child {
     width: 100%;
   }
 
-  .hero-media {
-    height: clamp(220px, 58vw, 300px);
-  }
-
-  .hero-media img {
-    object-position: center bottom;
+  .hero-media,
+  .hero-veil {
+    height: clamp(240px, 62vw, 320px);
   }
 
   .hero-content {
-    padding: 1.5rem 0 2rem;
+    padding: 1.35rem 0 2rem;
   }
 
   .hero-content h1 {
-    font-size: clamp(1.45rem, 6vw, 1.85rem);
-    margin-bottom: 0.75rem;
+    top: calc(-1 * clamp(240px, 62vw, 320px) + var(--header-h) + 0.75rem);
+    bottom: auto;
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
   }
 
   .hero-content .lede {
@@ -908,5 +1071,25 @@ p:last-child {
 
   .media-block img {
     height: min(320px, 70vw);
+  }
+
+  .meet-hero-media,
+  .meet-hero-veil {
+    height: clamp(240px, 62vw, 320px);
+  }
+
+  .meet-hero-content {
+    padding: 1.35rem 0 2rem;
+  }
+
+  .meet-hero-content h2 {
+    top: calc(-1 * clamp(240px, 62vw, 320px) + 1rem);
+    bottom: auto;
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
+  }
+
+  .meet-hero-content .lede {
+    max-width: 22rem;
+    font-size: 0.95rem;
   }
 }
