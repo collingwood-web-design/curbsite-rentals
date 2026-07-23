@@ -365,6 +365,45 @@ p:last-child {
   color: var(--black);
 }
 
+/* Desktop: keep hero button position, show lede below image */
+.hero-lede-band {
+  display: none;
+}
+
+@media (min-width: 901px) {
+  .hero-content .hero-lede-reserve {
+    visibility: hidden;
+  }
+
+  .hero-lede-band {
+    display: block;
+    width: 100%;
+    padding: clamp(1.5rem, 3vw, 2.25rem) 0;
+    background: var(--white);
+    text-align: center;
+  }
+
+  .hero-lede-band .shell {
+    width: var(--shell);
+    max-width: none;
+  }
+
+  .hero-lede-band .lede {
+    max-width: none;
+    width: 100%;
+    margin: 0 auto 0.65rem;
+    font-size: 1.1rem;
+    line-height: 1.55;
+    font-weight: 400;
+    color: #000;
+    text-align: center;
+  }
+
+  .hero-lede-band .lede:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .hero .btn-primary,
 .meet-hero .btn-primary {
   background: var(--blue);
