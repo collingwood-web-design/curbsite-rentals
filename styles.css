@@ -323,9 +323,9 @@ p:last-child {
   pointer-events: none;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.42) 0%,
-    rgba(255, 255, 255, 0.18) 28%,
-    rgba(255, 255, 255, 0) 52%
+    rgba(255, 255, 255, 0.68) 0%,
+    rgba(255, 255, 255, 0.32) 30%,
+    rgba(255, 255, 255, 0) 55%
   );
 }
 
@@ -379,6 +379,16 @@ p:last-child {
   border-color: var(--black);
   color: var(--white);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.meet-hero-content .about-contact {
+  margin: 0 0 1.35rem;
+  color: var(--black);
+}
+
+.meet-hero-content .about-contact .text-link {
+  font-weight: 600;
+  color: var(--black);
 }
 
 /* Sections */
@@ -517,11 +527,38 @@ p:last-child {
   color: #3a3a3a;
 }
 
+.about-owner .meet-hero-content .lede {
+  max-width: none;
+}
+
+.meet-specs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+  margin: 0 0 1.5rem;
+  max-width: 48rem;
+}
+
+.meet-spec-group h3 {
+  font-family: var(--font);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin: 0 0 0.55rem;
+}
+
 .meet-hero-content .check-list {
+  margin-bottom: 0;
+  max-width: none;
+  columns: auto;
+}
+
+.about-owner .meet-hero-content .check-list {
   margin-bottom: 1.5rem;
   max-width: 34rem;
-  columns: 2;
-  column-gap: 1.5rem;
+  columns: 1;
 }
 
 .meet-hero-content .check-list-dense li {
@@ -668,11 +705,10 @@ p:last-child {
 }
 
 .cta-band {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1.5rem 2rem;
   padding: 2rem 2.25rem;
   background: var(--black);
   color: var(--white);
@@ -685,13 +721,38 @@ p:last-child {
 
 .cta-band p {
   color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 1rem;
+}
+
+.cta-band .cta-checks {
   margin: 0;
+}
+
+.cta-band .cta-checks li {
+  color: var(--white);
+  font-weight: 500;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+.cta-band .cta-checks li::before {
+  border-left-color: var(--blue);
+  border-bottom-color: var(--blue);
 }
 
 .cta-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  justify-self: end;
+}
+
+.cta-band .cta-note {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-top: 0.35rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
 }
 
 .cta-band .btn-primary {
@@ -722,6 +783,17 @@ p:last-child {
 .page-hero .lede {
   max-width: 38rem;
   font-size: 1.125rem;
+}
+
+.about-placeholder {
+  margin-inline: auto;
+  text-align: center;
+  max-width: 40rem;
+}
+
+.about-placeholder p {
+  font-size: 1.1rem;
+  color: var(--gray);
 }
 
 .prose {
@@ -809,7 +881,7 @@ p:last-child {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45) !important;
+  color: var(--white) !important;
 }
 
 .site-footer a {
@@ -817,7 +889,20 @@ p:last-child {
   text-decoration: none;
 }
 
+.site-footer a[href^="tel:"],
+.site-footer a[href^="mailto:"] {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .site-footer a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  color: var(--blue);
+}
+
+a.text-link[href^="tel:"],
+a.text-link[href^="mailto:"] {
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
@@ -835,7 +920,7 @@ p:last-child {
 
 .footer-bottom {
   padding: 1.1rem 0 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 2px solid var(--blue);
   text-align: center;
 }
 
@@ -843,6 +928,18 @@ p:last-child {
   margin: 0;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.45);
+}
+
+.footer-credit {
+  margin-top: 0.65rem !important;
+}
+
+.footer-credit a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-credit a:hover {
+  color: var(--blue);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -890,8 +987,8 @@ p:last-child {
     pointer-events: none;
     background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.55) 0%,
-      rgba(255, 255, 255, 0.28) 28%,
+      rgba(255, 255, 255, 0.7) 0%,
+      rgba(255, 255, 255, 0.35) 28%,
       transparent 55%
     );
   }
@@ -1020,7 +1117,18 @@ p:last-child {
     font-size: 1rem;
   }
 
-  .meet-hero-content .check-list {
+  .about-owner .meet-hero-content .lede {
+    max-width: none;
+  }
+
+  .meet-specs {
+    grid-template-columns: 1fr;
+    max-width: 26rem;
+    gap: 1.15rem;
+  }
+
+  .meet-hero-content .check-list,
+  .about-owner .meet-hero-content .check-list {
     columns: 1;
     max-width: 26rem;
   }
@@ -1098,7 +1206,12 @@ p:last-child {
   }
 
   .cta-band {
+    grid-template-columns: 1fr;
     padding: 1.75rem;
+  }
+
+  .cta-actions {
+    justify-self: stretch;
   }
 
   .cta-actions,
@@ -1151,5 +1264,9 @@ p:last-child {
   .meet-hero-content .lede {
     max-width: 22rem;
     font-size: 0.95rem;
+  }
+
+  .about-owner .meet-hero-content .lede {
+    max-width: none;
   }
 }
