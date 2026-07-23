@@ -173,6 +173,15 @@ p:last-child {
   min-height: 2.6rem;
   padding: 0.55rem 1.1rem;
   font-size: 0.82rem;
+  border-color: var(--blue);
+  background: transparent;
+  color: var(--black);
+}
+
+.nav-book:hover {
+  border-color: var(--blue);
+  background: transparent;
+  color: var(--black);
 }
 
 .nav-toggle {
@@ -343,6 +352,22 @@ p:last-child {
   color: #3a3a3a;
 }
 
+.hero .btn-primary,
+.meet-hero .btn-primary {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+}
+
+.hero .btn-primary:hover,
+.meet-hero .btn-primary:hover {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--white);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
 /* Sections */
 .section {
   padding: clamp(3.5rem, 8vw, 5.5rem) 0;
@@ -411,7 +436,7 @@ p:last-child {
 /* Meet the truck — hero-style full-bleed background */
 .meet-hero {
   position: relative;
-  min-height: min(64vh, 560px);
+  min-height: min(72vh, 640px);
   display: grid;
   align-items: center;
   overflow: hidden;
@@ -471,21 +496,32 @@ p:last-child {
 }
 
 .meet-hero-content .lede {
-  max-width: 22rem;
+  max-width: 26rem;
   font-size: 1.05rem;
   line-height: 1.55;
   font-weight: 400;
-  margin: 0 0 1.35rem;
+  margin: 0 0 1.15rem;
   color: #3a3a3a;
 }
 
 .meet-hero-content .check-list {
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
+  max-width: 34rem;
+  columns: 2;
+  column-gap: 1.5rem;
+}
+
+.meet-hero-content .check-list-dense li {
+  padding-top: 0.28rem;
+  padding-bottom: 0.28rem;
+  break-inside: avoid;
+  font-size: 0.95rem;
 }
 
 .meet-hero-content .check-list li::before {
-  border-left-color: var(--black);
-  border-bottom-color: var(--black);
+  border-left-color: var(--blue);
+  border-bottom-color: var(--blue);
+  top: 0.55rem;
 }
 
 /* Feature grid */
@@ -643,6 +679,12 @@ p:last-child {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+}
+
+.cta-band .btn-primary {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
 }
 
 .cta-band .btn-primary:hover {
@@ -963,6 +1005,11 @@ p:last-child {
   .meet-hero-content .lede {
     max-width: 34rem;
     font-size: 1rem;
+  }
+
+  .meet-hero-content .check-list {
+    columns: 1;
+    max-width: 26rem;
   }
 }
 
